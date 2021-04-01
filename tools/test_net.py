@@ -44,7 +44,7 @@ def main():
         default=None,
         nargs=argparse.REMAINDER,
     )
-
+    parser.add_argument("--bf16", action='store_true', help='use half precision')
     args = parser.parse_args()
 
     num_gpus = int(os.environ["WORLD_SIZE"]) if "WORLD_SIZE" in os.environ else 1
